@@ -1,0 +1,16 @@
+$primary-color: #ffffff;
+$secondary-color: #44aedb;
+
+::-webkit-scrollbar {
+  width: 0.375rem;
+  height: 0.375rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #404040;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8d8d8d;
+  border-radius: 8px;
+}
