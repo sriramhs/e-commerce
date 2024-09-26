@@ -13,16 +13,34 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { toast } from "@/hooks/use-toast";
 const Cart = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
-  return (
+  const addItems = (item: CartItem) => {
+    try {
+      dispatch(addItem(item));
+    } catch (error) {
+      toast({
+        title: "Warning",
+        description: `${error}`,
+      });
+    }
+  };
+  const removeItems = (item: CartItem) => {
+    if (item?.itemCount === 1) {
+      alert("remove item ?");
+    }
+    dispatch(removeItem(item));
+  };
+
+  return cartItems.length ? (
     <Table>
       <TableHeader>
         <TableRow>
           <TableHead className="hidden sm:table-cell">Sl.No</TableHead>
           <TableHead>Product</TableHead>
-          <TableHead>Status</TableHead>
+          <TableHead>Quantity</TableHead>
           <TableHead className="hidden md:table-cell">Price</TableHead>
           <TableHead></TableHead>
         </TableRow>
@@ -50,7 +68,7 @@ const Cart = () => {
                   <MinusIcon
                     className="cursor-pointer"
                     onClick={() => {
-                      dispatch(removeItem(item));
+                      removeItems(item);
                     }}
                   ></MinusIcon>
 
@@ -58,7 +76,7 @@ const Cart = () => {
                   <PlusIcon
                     className="cursor-pointer"
                     onClick={() => {
-                      dispatch(addItem(item));
+                      addItems(item);
                     }}
                   ></PlusIcon>
                 </div>
@@ -68,6 +86,10 @@ const Cart = () => {
         })}
       </TableBody>
     </Table>
+  ) : (
+    <h2 className="pl-[40%] pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+      The Cart is Empty
+    </h2>
   );
 };
 

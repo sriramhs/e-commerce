@@ -18,14 +18,14 @@ const Layout = () => {
         >
           Dashboard
         </div>
-        <div
+        {/* <div
           className="text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           onClick={() => {
             navigate("/orders");
           }}
         >
           Orders
-        </div>
+        </div> */}
         <div
           className="text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           onClick={() => {
