@@ -26,5 +26,53 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Start of Saufter Helpdesk (saufter.io) code -->
+
+    <script async>
+      window.SaufterSettings = {
+        user_id: user.id, // IMPORTANT: Replace 'user.id' with the variable you use to capture the user's ID
+        user_name: user.name, // IMPORTANT: Replace 'user.name' with the variable you use to capture the user's name
+        user_mail: user.email, // IMPORTANT: Replace 'user.email' with the variable you use to capture the user's email address
+        phone_number: user.phoneNumber, // IMPORTANT: Replace 'user.phoneNumber' with the variable you use to capture the user's phone number
+        is_signed_up: user.isSignedUp, // IMPORTANT: Replace 'user.isSignedUp' with the variable you use to capture the user sign up status
+        city: user.city, // IMPORTANT: Replace 'user.city' with the variable you use to capture the user's city
+        region: user.region, // IMPORTANT: Replace 'user.region' with the variable you use to capture the user's region
+        lead_category: user.leadCategory, // IMPORTANT: Replace 'user.leadCategory' with the variable you use to capture the lead category
+        last_contacted: user.lastContacted, // IMPORTANT: Replace 'user.lastContacted' with the variable you use to capture the last contacted date/time
+        last_heard_from: user.lastHeardFrom, // IMPORTANT: Replace 'user.lastHeardFrom' with the variable you use to capture the last heard from date/time
+        last_opened_email: user.lastOpenedEmail, // IMPORTANT: Replace 'user.lastOpenedEmail' with the variable you use to capture the last opened email date/time
+        last_clicked_on_link_in_email: user.lastClickedOnLinkInEmail, // IMPORTANT: Replace 'user.lastClickedOnLinkInEmail' with the variable you use to capture the last clicked on link in email date/time
+        country_code: user.countryCode, // IMPORTANT: Replace 'user.countryCode' with the variable you use to capture the user's country code
+        continent_code: user.continentCode, // IMPORTANT: Replace 'user.continentCode' with the variable you use to capture the continent code
+        tags: user.tags, // IMPORTANT: Replace 'user.tags' with the variable you use to capture the user's tags (array or string)
+        unsubscribed_from_emails: user.unsubscribedFromEmails, // IMPORTANT: Replace 'user.unsubscribedFromEmails' with the variable you use to capture if the user has unsubscribed from emails
+        marked_email_as_spam: user.markedEmailAsSpam, // IMPORTANT: Replace 'user.markedEmailAsSpam' with the variable you use to capture if the user marked email as spam
+        has_hard_bounced: user.hasHardBounced, // IMPORTANT: Replace 'user.hasHardBounced' with the variable you use to capture if the user has hard bounced
+        referral_url: user.referralUrl, // IMPORTANT: Replace 'user.referralUrl' with the variable you use to capture the referral URL
+        subscription_type: user.subscriptionType, // IMPORTANT: Replace 'user.subscriptionType' with the variable you use to capture the subscription type
+      };
+    </script>
+
+    <script async>
+      function loadWidget() {
+        const domain = "https://newtomarket.sauftertest.com";
+        const integrationId = "3e1ecec6-c770-4e19-8a4a-40819e8326f5";
+        const saufterScript = document.createElement("script");
+        saufterScript.src =
+          domain +
+          "/live-chat-widget/widget.js?version=" +
+          new Date().toISOString().slice(0, 13);
+        saufterScript.setAttribute("rel", "nofollow,noindex");
+        saufterScript.setAttribute("helpdesk-integration-id", integrationId);
+        saufterScript.setAttribute("helpdesk-api-integration-script", "true");
+        saufterScript.setAttribute(
+          "iframe-container-id",
+          "helpdesk-iframe-container"
+        );
+        document.querySelector("body").appendChild(saufterScript);
+      }
+      loadWidget();
+    </script>
+    <!-- End of Saufter Helpdesk code -->
   </body>
 </html>
